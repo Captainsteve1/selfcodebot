@@ -9,8 +9,7 @@ def start_command(update, context):
     update.message.reply_text ('Hello {user} welcome to my bot') 
    
 def handle_response (text: str) -> str:
-    if hello In text
-
-    return 'hello my friend '
+    if 'hello' in text:
+    return 'hello my friend'
 
     dp.add.handler(commandHandler('start', start_command))
