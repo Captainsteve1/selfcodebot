@@ -1,4 +1,4 @@
-from program import client, filters
+from program import *
 
 bot = client(
          "My fist self code",
