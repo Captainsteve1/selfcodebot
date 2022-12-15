@@ -1,4 +1,5 @@
 from telegram.ext import *
+import python 
 
 Token = "5809892449:AAFE_GhVSKIcTbdya4WIg0qs9AXk5cUlZB4"
 
@@ -12,4 +13,4 @@ def handle_response (text: str) -> str:
 
     return 'hello my friend '
 
-    dp.add.handler(commandHandler)('start', start_command))
+    dp.add.handler(commandHandler('start', start_command))
