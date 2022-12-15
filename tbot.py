@@ -12,5 +12,4 @@ def handle_response (text: str) -> str:
 
     return 'hello my friend '
 
-
-dp.add.handle(commandHandler) ('start' start_command))
+    dp.add.handler(commandHandler)('start', start_command))
