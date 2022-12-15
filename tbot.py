@@ -1,21 +1,14 @@
-from telegram.ext import *
-import python 
+from program import client, filters
 
-Token = "5809892449:AAFE_GhVSKIcTbdya4WIg0qs9AXk5cUlZB4"
+bot = client(
+         "My fist self code"
+      api_id = "15855531"
+      api_hash = "31e0b87de4285ebff259e003f58bf469"
+      bot_token = "5809892449:AAFE_GhVSKIcTbdya4WIg0qs9AXk5cUlZB4"
+)
 
-print("Starting up your bot my Tony...")
+@bot.on.message(filters.command('start') & filters.private)
+def command1(bot.message):
+    bot.send.message(message.chat.id, "Welcome to fucking bot")
 
-def start_command(update, context):
-    update.message.reply_text ('Hello {user} welcome to my bot') 
-   
-def handle_response (text: str) -> str:
-    if 'hello' in text:
-    return 'hello my friend'
-
-    if 'fuck' in text: 
-    return 'same ti u'
-
-
-    return 'Fuck you'
-
-    dp.add.handler(commandHandler('start', start_command))
+bot.run()
