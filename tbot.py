@@ -8,7 +8,7 @@ bot = client(
 )
 
 @bot.on.message(filters.command('start') & filters.private)
-def command1(bot.message):
+def command1(bot, message):
     bot.send.message(message.chat.id, "Welcome to fucking bot")
 
 bot.run()
