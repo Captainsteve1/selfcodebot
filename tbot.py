@@ -12,4 +12,10 @@ def handle_response (text: str) -> str:
     if 'hello' in text:
     return 'hello my friend'
 
+    if 'fuck' in text: 
+    return 'same ti u'
+
+
+    return 'Fuck you'
+
     dp.add.handler(commandHandler('start', start_command))
