@@ -19,7 +19,7 @@ print("Owner found @tony9848")
 print("Bot started.. go & check your bot")
 
 @Tbot.on.message(filters.command('shell') & filters.private)
-def shell(update, context):
+def shell(client, message):
     message = update.effective_message
     cmd = message.text
     process = srun(cmd, capture_output=True, shell=True)
