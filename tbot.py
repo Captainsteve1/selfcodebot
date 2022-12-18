@@ -1,14 +1,12 @@
-from program import *
+from telegram.ext import *
+import response 
 
-bot = client(
-         "My fist self code",
-      api_id = 15855531,
-      api_hash = "31e0b87de4285ebff259e003f58bf469",
-      bot_token = "5809892449:AAFE_GhVSKIcTbdya4WIg0qs9AXk5cUlZB4"
-)
+BOT_TOKEN = "5809892449:AAFE_GhVSKIcTbdya4WIg0qs9AXk5cUlZB4"
 
-@bot.on.message(filters.command('start') & filters.private)
-def command1(bot, message):
-    bot.send.message(message.chat.id, "Welcome to fucking bot")
+def start_command(update, context)
+    update.message.reply_text("Hello {message.chat.id} welcome to my bot'!")
 
-bot.run()
+def help_command(update, context)
+    update.message.reply_text("Help commands {message.chat.id} welcome to my bot'!")
+
+def 
