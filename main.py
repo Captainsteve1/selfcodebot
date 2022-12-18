@@ -1,5 +1,9 @@
 from pyrogram import Client, filters
 import config 
+import os
+import sys
+import asyncio
+from os import path as os_path
 
 Tbot = Client(name="Myacc", api_id=config.Api_id, api_hash=config.Api_hash, bot_token=config.Bot_Token)
 
@@ -13,7 +17,7 @@ print("Owner found @tony9848")
 print("Bot started.. go & check your bot")
 
 @Tbots.on.message(filters.command('shell') & filters.private)
-def tg_s_Handler(bot: TBot, message: Message):
+def tg_s_Handler(bot: Tbot, message: Message):
     cmd = message.text.split(' ', 1)
     sts = await message.reply_text("Please wait ....")
     if len(cmd) == 1:
