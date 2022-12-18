@@ -1,7 +1,7 @@
 from pyrogram import Client, filters
 import config 
 
-Tbot = Client("Myacc", Api_id=config.Api_id, Api_hash=config.Api_hash, Bot_Token=config.Bot_Token)
+Tbot = Client(name="Myacc", api_id=config.Api_id, api_hash=config.Api_hash, bot_token=config.Bot_Token)
 
 print("Please wait setting up your vars to start your bot")
 
