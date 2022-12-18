@@ -1,8 +1,8 @@
+import logging
 from telegram.ext import *
 import responses
-import logging
 
-BOT_TOKEN = "5809892449:AAFE_GhVSKIcTbdya4WIg0qs9AXk5cUlZB4"
+API_KEY = '5809892449:AAFE_GhVSKIcTbdya4WIg0qs9AXk5cUlZB4'
 
 # Set up the logging
 logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s', level=logging.INFO)
@@ -10,34 +10,47 @@ logging.info('Starting Bot...')
 
 
 def start_command(update, context):
-    update.message.reply_text("Hello {update.message.chat.id} welcome to my bot'!")
+    update.message.reply_text('Hello there! I\'m a bot. What\'s up?')
 
 
 def help_command(update, context):
-    update.message.reply_text("Help commands {update.message.chat.id} welcome to my bot'!")
+    update.message.reply_text('Try typing anything and I will do my best to respond!')
+
+
+def custom_command(update, context):
+    update.message.reply_text('This is a custom command, you can add whatever text you want here.')
 
 
 def handle_message(update, context):
-    text = str(update.message.reply).lower()
-    logging.info(f'user {update.message.chat.id} says: {text}')
+    text = str(update.message.text).lower()
+    logging.info(f'User ({update.message.chat.id}) says: {text}')
 
-   #bot response to user
+    # Bot response
     response = responses.get_response(text)
     update.message.reply_text(response)
 
 
+def error(update, context):
+    # Logs errors
+    logging.error(f'Update {update} caused error {context.error}')
+
+
+# Run the programme
 if __name__ == '__main__':
-   updater = Updater(BOT_TOKEN, use_context=True)
-   dp = updater.dispatcher
+    updater = Updater(API_KEY, use_context=True)
+    dp = updater.dispatcher
 
-#comds
+    # Commands
+    dp.add_handler(CommandHandler('start', start_command))
+    dp.add_handler(CommandHandler('help', help_command))
+    dp.add_handler(CommandHandler('custom', custom_command))
 
-  dp.add_handler(CommandHandler('start', start_command))
-  dp.add_handler(CommandHandler('help', help_command))
+    # Messages
+    dp.add_handler(MessageHandler(Filters.text, handle_message))
 
-#msg
-  dp.add_handler(MessageHandler(filters.txt, handle_message))
+    # Log all errors
+    dp.add_error_handler(error)
 
-#run bot
-  updater.start_polling(2.0)
-  updater.idle()
+    # Run the bot
+    updater.start_polling(1.0)
+    updater.idle()
