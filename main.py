@@ -13,4 +13,4 @@ print("Owner found @tony9848")
 print("Bot started.. go & check your bot")
     
 Tbot.run() # to start running bot!   
-      print("Bot started.. go & chk")
+    
