@@ -1,8 +1,13 @@
 from telegram.ext import *
-import response 
+import responses
 import logging
 
 BOT_TOKEN = "5809892449:AAFE_GhVSKIcTbdya4WIg0qs9AXk5cUlZB4"
+
+# Set up the logging
+logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s', level=logging.INFO)
+logging.info('Starting Bot...')
+
 
 def start_command(update, context):
     update.message.reply_text("Hello {update.message.chat.id} welcome to my bot'!")
