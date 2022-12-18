@@ -3,9 +3,9 @@ import config
 
 Tbot = Client("Myacc", Api_id=config.Api_id, Api_hash=config.Api_hash, Bot_Token=config.Bot_Token)
 
-print("Please wait setting up your vars")
+print("Please wait setting up your vars to start your bot")
 
-@Tbot.on.messagd(filters.command('start') & filters.private
+@Tbot.on.message(filters.command('start') & filters.private
 def welcome(client, message):
     message.reply_text(text="Hello {user} welcome to Test bot join @tmirrorleech")
     
