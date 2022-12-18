@@ -18,7 +18,7 @@ def welcome(client, message):
 print("Owner found @tony9848")
 print("Bot started.. go & check your bot")
 
-@Tbots.on.message(filters.command('shell') & filters.private)
+@Tbot.on.message(filters.command('shell') & filters.private)
 def shell(update, context):
     message = update.effective_message
     cmd = message.text
