@@ -94,7 +94,7 @@ def decrypt(audio_data, video_data, key, end_code):
     dec_out_audio_file_name = f"dec_{audio_data[i]}_{end_code}.m4a"
 
     cmd_audio_decrypt = [
-            "selfcodebot/content/mp4decrypt",
+            "/content",
             "--key",
             str(key),
             str(enc_dl_audio_file_name),
@@ -111,7 +111,7 @@ def decrypt(audio_data, video_data, key, end_code):
   dec_out_video_file_name = f"dec_{video_data}-{end_code}.mp4"
 
   cmd_video_decrypt = [
-            "selfcodebot/content/mp4decrypt",
+            "/content",
             "--key",
             str(key),
             str(enc_dl_video_file_name),
