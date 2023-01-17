@@ -14,7 +14,7 @@ import json
 
 from datetime import timedelta
 
-GROUP_TAG = "TONY"
+GROUP_TAG = TONY
 
 def convert_base64(text , type_=None):
     if type_ is None:
@@ -146,7 +146,7 @@ def mux_video(audio_data, video_data, end_code, show_name, res, langs, time_data
 
   # print(ffmpeg_opts)
   ffmpeg_opts += "-map 0:v:0 "
-  ffmpeg_opts += f"-metadata encoded_by={GROUP_TAG} -metadata:s:a title={GROUP_TAG} -metadata:s:v title={GROUP_TAG} "
+  ffmpeg_opts += f"-metadata encoded_by={GROUP_TAG} -metadata:s:a title={GROUP_TAG} -metadata:s:v title={GROUP_TAG}"
   out_name = f"{end_code}.mkv"
 
 
