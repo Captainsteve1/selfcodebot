@@ -56,7 +56,7 @@ def mpd_download(link, audio_data, video_data):
             "-o",
             f"enc_{audio_data[i]}_{end_code}.m4a",
             "--external-downloader",
-            "/content/aria2c"
+            "content/aria2c"
             
         ]
     audio_dl = subprocess.Popen(cmd)
@@ -75,7 +75,7 @@ def mpd_download(link, audio_data, video_data):
             "-o",
             f"enc_{video_data}-{end_code}.mp4",
             "--external-downloader",
-            "/content/aria2c"
+            "content/aria2c"
             
         ]
   print("[DL] Video Stream")
