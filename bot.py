@@ -146,11 +146,11 @@ def mux_video(audio_data, video_data, end_code, show_name, res, langs, time_data
 
   # print(ffmpeg_opts)
   ffmpeg_opts += "-map 0:v:0 "
-  ffmpeg_opts += f"-metadata encoded_by={GROUP_TAG} -metadata:s:a title="first" -metadata:s:v title="jejd""
+  ffmpeg_opts += f"-metadata encoded_by={GROUP_TAG} -metadata:s:a title="first" -metadata:s:v title={GROUP_TAG}"
   out_name = f"{end_code}.mkv"
 
 
-  out_file_name = "{}.{}.{}.TATAPLAY.WEB-DL.AAC2.0.{}.H264-{GROUP_TAG}.mkv".format(show_name, time_data, res, "-".join(langs)).replace(" " , ".")
+  out_file_name = "{}.{}.{}.TATAPLAY.WEB-DL.AAC2.0.{}.H264.mkv".format(show_name, time_data, res, "-".join(langs)).replace(" " , ".")
   out_file_name = out_file_name.replace("30.00" , "30").replace("00.00" , "00")
   ffmpeg_opts += f"-c copy {out_name}"
   ffmpeg_opts = ffmpeg_opts.split()
