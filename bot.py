@@ -14,7 +14,7 @@ import json
 
 from datetime import timedelta
 
-GROUP_TAG = TONY
+GROUP_TAG = "TONY"
 
 def convert_base64(text , type_=None):
     if type_ is None:
